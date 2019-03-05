@@ -1,27 +1,3 @@
-## Eslint & Prettier
-
-- install dependency
-
-  ```sh
-  yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier babel-eslint -D
-  ```
-
-- Add .eslintrc.js on root
-
-  ```js
-  module.exports = {
-    root: !0,
-    env: {
-      node: !0
-    },
-    extends: ["plugin:prettier/recommended"],
-    rules: {
-      "prettier/prettier": 1
-    },
-    parser: "babel-eslint"
-  };
-  ```
-
 ## Tip
 
 ### Proxy

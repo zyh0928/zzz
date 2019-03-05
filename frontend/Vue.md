@@ -36,33 +36,18 @@
   yarn build
   ```
 
-### UI Framework
-
-- Vuetify: `yarn add vuetify`
-
 ### Modules
-
-> dev dependencies
-
-- style-resources-loader: `yarn add -D style-resources-loader`
-
-  ```sh
-  yarn add -D style-resources-loader  @types/lodash
-  ```
 
 > dependencies
 
-- axios: `yarn add axios`
-- jQuery: `yarn add jquery`
-- Lodash: `yarn add lodash`
-- anime.js: `yarn add animejs`
-- Animate.css: `yarn add animate.css`
-- Vue I18n: `yarn add vue-i18n`
-- VeeValidate: `yarn add vee-validate`
-- Vue.Draggable: `yarn add vuedraggable`
+  ```sh
+  yarn add vuetify axios jquery lodash animejs animate.css vue-i18n vee-validate vuedraggable
+  ```
+
+> dev dependencies
 
   ```sh
-  yarn add axios jquery lodash animejs animate.css vue-i18n vee-validate vuedraggable
+  yarn add -D @types/lodash style-resources-loader
   ```
 
 ### Icon
