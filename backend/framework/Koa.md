@@ -5,13 +5,13 @@
 > dependencies
 
 ```sh
-yarn add koa koa-router koa-bodyparser uuid
+yarn add koa koa-router koa-bodyparser uuid cross-env
 ```
 
 > dev dependencies
 
 ```sh
-yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyparser rimraf
+yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyparser rimraf nodemon ts-node
 ```
 
 ### Eslint & Prettier
