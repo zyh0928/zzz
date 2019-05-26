@@ -41,13 +41,13 @@
 > dependencies
 
   ```sh
-  yarn add vuetify axios jquery lodash animejs animate.css vue-i18n vee-validate vuedraggable
+  yarn add animate.css animejs axios lodash vee-validate vue-i18n vue-router vuetify
   ```
 
 > dev dependencies
 
   ```sh
-  yarn add -D @types/lodash style-resources-loader
+  yarn add @types/lodash style-resources-loader -D
   ```
 
 ### Icon

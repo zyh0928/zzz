@@ -11,7 +11,7 @@ yarn add koa koa-router koa-bodyparser uuid
 > dev dependencies
 
 ```sh
-yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyparser @types/uuid rimraf nodemon ts-node cross-env
+yarn add typescript @types/node @types/koa @types/koa-router @types/koa-bodyparser @types/uuid rimraf nodemon ts-node cross-env -D
 ```
 
 ### Eslint & Prettier
@@ -19,7 +19,7 @@ yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyp
 - Install dependency
 
   ```sh
-  yarn add -D eslint prettier eslint-plugin-prettier eslint-config-prettier babel-eslint
+  yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier babel-eslint -D
   ```
 
 - Add `.eslintrc.js` on root
@@ -56,7 +56,7 @@ yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyp
 - Install dependency
 
   ```sh
-  yarn add -D @babel/core @babel/register @babel/preset-env @babel/runtime @babel/plugin-transform-runtime
+  yarn add @babel/core @babel/register @babel/preset-env @babel/runtime @babel/plugin-transform-runtime -D
   ```
 
 - Add `.babelrc` on root
@@ -81,6 +81,33 @@ yarn add -D typescript @types/node @types/koa @types/koa-router @types/koa-bodyp
 ```sh
 yarn add typeorm mysql
 ```
+
+### pm2
+
+- Command
+
+  ```sh
+  # Installation
+  yarn global add pm2
+
+  # show list
+  pm2 ls
+
+  # start and add a process to list
+  pm2 start ecosystem.config.js [--only <app_name>] [--watch]
+
+  # stop and delete a process from the list
+  pm2 delete <app_name | all>
+
+  # both stop and start
+  pm2 restart <app_name | all>
+
+  # stop the process (kill the process but keep it in the process list)
+  pm2 stop <app_name | all>
+
+  # user reload instead of restart for 0-seconds downtime reloads
+  pm2 reload <app_name | all>
+  ```
 
 ## Link
 
