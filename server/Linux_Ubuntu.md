@@ -1,3 +1,24 @@
+## Command
+
+```sh
+# Update package database with apt
+sudo apt update
+
+# Upgrade installed packages with apt
+sudo apt upgrade
+sudo apt full-upgrade
+
+# How to clean your system with apt
+sudo apt autoremove
+
+# How to remove installed packages with apt
+# just removes the binaries of a package. It leaves residue configuration files.
+sudo apt remove <package_name>
+# removes everything related to a package including the configuration files.
+sudo apt purge <package_name>
+
+```
+
 ## [acme.sh](https://github.com/Neilpang/acme.sh)
 
 ### Install online
@@ -5,7 +26,7 @@
 ```sh
 curl https://get.acme.sh | sh
 # or
-wget -O -  https://get.acme.sh | sh
+wget -O - https://get.acme.sh | sh
 ```
 
 ### Use Hurricane Electric
@@ -26,10 +47,10 @@ wget -O -  https://get.acme.sh | sh
 ### Install the cert to Nginx
 
 ```sh
-acme.sh --install-cert -d wjbzg.com -d *.wjbzg.com \
---key-file /path/to/keyfile/in/nginx/key.pem \
---fullchain-file /path/to/fullchain/nginx/cert.pem \
---reloadcmd "service nginx force-reload"
+acme.sh --installcert -d wjbzg.com -d *.wjbzg.com \
+--key-file /www/picoll/ssl/wjbzg.com.key \
+--fullchain-file /www/picoll/ssl/fullchain.cer \
+--reloadcmd "nginx -s reload"
 ```
 
 ### Upgrade `acme.sh`

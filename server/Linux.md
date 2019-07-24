@@ -19,3 +19,10 @@
 - 安装 `linux`
 
 ## Install Ubuntu
+
+## Command
+
+```sh
+# Remove the user
+userdel -fr <username>
+```
