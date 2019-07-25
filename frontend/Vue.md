@@ -40,15 +40,15 @@
 
 > dependencies
 
-  ```sh
-  yarn add animate.css animejs axios lodash vee-validate vue-i18n vue-router vuetify
-  ```
+```sh
+yarn add animate.css axios lodash vee-validate vue-i18n vuetify
+```
 
 > dev dependencies
 
-  ```sh
-  yarn add @types/lodash style-resources-loader -D
-  ```
+```sh
+yarn add @types/lodash -D
+```
 
 ### Icon
 
@@ -79,9 +79,7 @@
     ```css
     /*
       下载字体到本地
-
       下载 css 文件直接导入
-
       或在导入的通用样式中添加以下规则
     */
     @font-face {
