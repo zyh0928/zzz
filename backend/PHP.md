@@ -68,9 +68,3 @@
   taskkill /F /IM php-cgi.exe > nul
   exit
   ```
-
-## Link
-
-- [**PHP**](http://www.php.net/)
-- [**Download**](http://php.net/downloads.php)
-- [**Composer**](https://getcomposer.org/)

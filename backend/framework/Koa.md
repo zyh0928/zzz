@@ -108,7 +108,3 @@ yarn add typeorm mysql
   # user reload instead of restart for 0-seconds downtime reloads
   pm2 reload <app_name | all>
   ```
-
-## Link
-
-- [**Koa**](https://koajs.com/)

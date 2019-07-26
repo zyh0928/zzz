@@ -12,7 +12,3 @@ cd <name>
 # 开启 node 本地服务
 npm start
 ```
-
-## Link
-
-- [**React.js**](https://cn.vuejs.org/)

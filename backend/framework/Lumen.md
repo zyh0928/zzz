@@ -63,7 +63,3 @@
     return $data;
   }
   ```
-
-## Link
-
-- [**Lumen**](https://lumen.laravel.com/)
