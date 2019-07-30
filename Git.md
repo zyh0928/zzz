@@ -3,7 +3,7 @@
 ### Generate a new SSH key
 
 ```sh
-ssh-keygen -t rsa -C 'comment'
+ssh-keygen -t rsa
 ```
 
 ### Identity

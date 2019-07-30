@@ -23,20 +23,6 @@
   };
   ```
 
-### Modules
-
-> dependencies
-
-```sh
-yarn add animate.css axios lodash vee-validate vue-i18n vuetify
-```
-
-> dev dependencies
-
-```sh
-yarn add @types/lodash -D
-```
-
 ## Vue Router
 
 ### HTML5 History Mode
