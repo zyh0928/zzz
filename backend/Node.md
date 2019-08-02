@@ -1,3 +1,108 @@
+## pm2
+
+- Command
+
+  ```sh
+  # Installation
+  yarn global add pm2
+
+  # show list
+  pm2 ls
+
+  # start and add a process to list
+  pm2 start ecosystem.config.js [--only <app_name>] [--watch]
+
+  # stop and delete a process from the list
+  pm2 delete <app_name | all>
+
+  # both stop and start
+  pm2 restart <app_name | all>
+
+  # stop the process (kill the process but keep it in the process list)
+  pm2 stop <app_name | all>
+
+  # user reload instead of restart for 0-seconds downtime reloads
+  pm2 reload <app_name | all>
+  ```
+
+## Eslint & Prettier
+
+- Install dependency
+
+  ```sh
+  yarn add babel-eslint eslint eslint-{config-prettier,plugin-prettier} prettier -D
+  ```
+
+- Add `eslintConfig` & `prettier` field in `package.json`
+
+  ```json
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "prettier/prettier": 1,
+      "no-console": 1
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
+  },
+  "prettier": {}
+  ```
+
+- Add a script in `package.json`
+
+  ```json
+  "scripts": {
+    "lint": "eslint --fix --ext .js,.ts ./"
+  }
+  ```
+
+## Babel
+
+- Install dependency
+
+  ```sh
+  yarn add @babel/{core,plugin-transform-runtime,preset-env,register,runtime} -D
+  ```
+
+- Add `babel.config.js` on root
+
+  ```js
+  module.exports = {
+    presets: ["@babel/preset-env"],
+    plugins: ["@babel/plugin-transform-runtime"]
+  };
+
+  // or
+  module.exports = function(api) {
+    const env = api.env();
+
+    const config = {
+      presets: ["@babel/preset-env"],
+      plugins: ["@babel/plugin-transform-runtime"]
+    };
+
+    return config;
+  };
+  ```
+
+- Add `start.js`
+
+  ```js
+  require("@babel/register");
+
+  module.exports = require("path/to/entry/file");
+  ```
+
 ## Tip
 
 ### Proxy
