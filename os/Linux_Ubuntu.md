@@ -8,15 +8,14 @@ sudo apt update
 sudo apt upgrade
 sudo apt full-upgrade
 
-# How to clean your system with apt
+# Clean system with apt
 sudo apt autoremove
 
-# How to remove installed packages with apt
+# Remove installed packages with apt
 # just removes the binaries of a package. It leaves residue configuration files.
 sudo apt remove <package_name>
 # removes everything related to a package including the configuration files.
 sudo apt purge <package_name>
-
 ```
 
 ## [acme.sh](https://github.com/Neilpang/acme.sh)
