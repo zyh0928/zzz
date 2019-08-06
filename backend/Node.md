@@ -30,7 +30,7 @@
 - Install dependency
 
   ```sh
-  yarn add babel-eslint eslint eslint-{config-prettier,plugin-prettier} prettier -D
+  yarn add -D {babel-,}eslint {eslint-{config,plugin}-,}prettier
   ```
 
 - Add `eslintConfig` & `prettier` field in `package.json`
@@ -62,7 +62,7 @@
 
   ```json
   "scripts": {
-    "lint": "eslint --fix --ext .js,.ts ./"
+    "lint": "eslint --fix --ext .js,.ts ."
   }
   ```
 
@@ -71,7 +71,7 @@
 - Install dependency
 
   ```sh
-  yarn add @babel/{core,plugin-transform-runtime,preset-env,register,runtime} -D
+  yarn add -D @babel/{core,plugin-transform-runtime,preset-env,register,runtime}
   ```
 
 - Add `babel.config.js` on root

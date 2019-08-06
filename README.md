@@ -7,7 +7,7 @@
 - [**Pillow**](https://python-pillow.org/)
 - [yapf](https://github.com/google/yapf)
 
-  Web
+  **Web**
 - [**Flask**](https://www.palletsprojects.com/p/flask)
 
 ### [Node.js](https://nodejs.org/)
@@ -15,7 +15,7 @@
 - [**Yarn**](https://yarnpkg.com/)
 - [**npm**](https://www.npmjs.com/)
 
-  Web
+  **Web**
 - [**axios**](https://github.com/axios/axios)
   > Promise based HTTP client for the browser and node.js
 - [**Sequelize**](http://docs.sequelizejs.com/)
@@ -27,7 +27,7 @@
 
 - [**Composer**](https://getcomposer.org/)
 
-  Web
+  **Web**
 - [**Guzzle**](http://guzzlephp.org/)
 - [**Lumen**](https://lumen.laravel.com/)
 
