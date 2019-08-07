@@ -27,44 +27,44 @@
 
 ## Eslint & Prettier
 
-- Install dependency
+### General
 
-  ```sh
-  yarn add -D {babel-,}eslint {eslint-{config,plugin}-,}prettier
-  ```
+```sh
+# Install dependency
+yarn add -D {babel-,}eslint {eslint-{config,plugin}-,}prettier
+```
 
-- Add `eslintConfig` & `prettier` field in `package.json`
-
-  ```json
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:prettier/recommended"
-    ],
-    "rules": {
-      "prettier/prettier": 1,
-      "no-console": 1
-    },
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "legacyDecorators": true
-      }
-    }
+```json
+// package.json
+"eslintConfig": {
+  "root": true,
+  "env": {
+    "node": true
   },
-  "prettier": {}
-  ```
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": 1,
+    "no-console": 1
+  },
+  "parser": "babel-eslint"
+},
+"prettier": {
+  // prettier options
+}
+```
 
-- Add a script in `package.json`
+### TypeScript
 
-  ```json
-  "scripts": {
-    "lint": "eslint --fix --ext .js,.ts ."
-  }
-  ```
+### Command
+
+```json
+// package.json
+"scripts": {
+  "lint": "eslint --fix --ext .js,.ts ."
+}
+```
 
 ## Babel
 
