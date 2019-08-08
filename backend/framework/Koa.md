@@ -11,13 +11,13 @@ yarn add @koa/cors dotenv jsonwebtoken koa koa-{bodyparser,jwt,router} uuid
 > dev dependencies
 
 ```sh
-yarn add -D @types/{dotenv,jsonwebtoken,koa{,-bodyparser,-router,__cors},uuid} cross-env nodemon rimraf ts{-node,config-paths} typescript
+yarn add -D @types/{dotenv,jsonwebtoken,koa{,-bodyparser,-router,__cors},uuid,webpack} {copy,terser}-webpack-plugin cross-env nodemon rimraf ts-{loader,node} tsconfig-paths{,-webpack-plugin} typescript webpack{,-cli,-filter-warnings-plugin,-merge}
 ```
 
 ### TypeORM
 
 ```sh
-yarn add typeorm mysql
+yarn add mysql reflect-metadata typeorm
 ```
 
 ## Tip
@@ -35,9 +35,6 @@ yarn add typeorm mysql
       "esModuleInterop": true,
       "experimentalDecorators": true,
       "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "outDir": "/tmp/admin",
       "paths": {
         "@/*": ["src/*"]
       },
@@ -53,8 +50,7 @@ yarn add typeorm mysql
   ```json
   "scripts": {
     "serve": "cross-env NODE_ENV=development nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node -r tsconfig-paths/register src",
-    "build": "rimraf /tmp/admin && tsc",
-    "go-test": "pm2 delete picoll-service-admin && pm2 start ecosystem.config.js --env test --only picoll-service-admin",
-    "go-production": "pm2 delete picoll-service-admin && pm2 start ecosystem.config.js --env production --only picoll-service-admin"
+    "build:test": "rimraf dist && webpack --config build/webpack.config.test",
+    "build:prod": "rimraf dist && webpack --config build/webpack.config.prod"
   }
   ```

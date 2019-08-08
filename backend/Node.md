@@ -57,6 +57,37 @@ yarn add -D {babel-,}eslint {eslint-{config,plugin}-,}prettier
 
 ### TypeScript
 
+```sh
+# Install dependency
+yarn add -D @typescript-eslint/{eslint-plugin,parser} eslint {eslint-{config,plugin}-,}prettier
+```
+
+```json
+// package.json
+"eslintConfig": {
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "prettier/prettier": 1,
+    "no-console": 1
+  }
+},
+"prettier": {
+  // prettier options
+}
+```
+
 ### Command
 
 ```json
