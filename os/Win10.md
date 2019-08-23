@@ -40,6 +40,20 @@
 
 ## Tips
 
+### Pin a batch file to the Start menu
+
+- create a shortcut
+- type the location of the item:
+
+  ```sh
+  # This will execute the batch file and close the command prompt window
+  cmd /c "path to your batch file"
+  # Then the command prompt will remain open after the batch file finishes running
+  cmd /k "path to your batch file"
+  ```
+
+- type a name for shortcut
+
 ### Internet Information Services (IIS)
 
 - **服务名**：World Wide Web Publishing
