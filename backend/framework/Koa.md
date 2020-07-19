@@ -5,13 +5,13 @@
 > dependencies
 
 ```sh
-yarn add @koa/cors dotenv jsonwebtoken koa koa-{bodyparser,jwt,router} uuid
+yarn add @koa/cors dotenv jsonwebtoken koa koa-{bodyparser,helmet,router} uuid
 ```
 
 > dev dependencies
 
 ```sh
-yarn add -D @types/{dotenv,jsonwebtoken,koa{,-bodyparser,-router,__cors},uuid,webpack} {copy,terser}-webpack-plugin cross-env nodemon rimraf ts-{loader,node} tsconfig-paths{,-webpack-plugin} typescript webpack{,-cli,-filter-warnings-plugin,-merge}
+yarn add -D @types/{dotenv,jsonwebtoken,koa{,-bodyparser,-helmet,-router,__cors},uuid,webpack} {copy,terser}-webpack-plugin cross-env nodemon rimraf ts-{loader,node} tsconfig-paths{,-webpack-plugin} typescript webpack{,-cli,-filter-warnings-plugin,-merge}
 ```
 
 ### TypeORM
