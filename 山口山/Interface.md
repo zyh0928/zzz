@@ -3,8 +3,6 @@
 - `AdvancedInterfaceOptions`: 参数管理
 - `Angry Keystones`: 大米助手
 - `Aptechka`: 团队框架
-- `AzeriteTooltip`: 艾泽里特特质显示
-- `BFAInvasionTimer`: BFA 入侵时间显示
 - `Bartender4`: 动作条
 - `BigWigs Bossmods`: 团本助手
 - `Bigwigs Voice - Chinese voicepack (VV)`: 团本助手语音
@@ -13,10 +11,10 @@
 - `BuyEmAll`: 批量购买
 - `ChampionCommander`: BFA随从增强
 - `Details! Damage Meter`: 伤害统计
-- `Details!: Explosive Orbs`: 打球统计
 - `Exorsus Raid Tools`: 团队辅助
 - `GarrisonCommander`: WOD要塞增强
 - `HandyNotes: Battle for Azeroth Treasures`: BFA 地图
+- `HandyNotes: Shadowlands`: 暗影国度
 - `HandyNotes: Visions of N'Zoth`: 恩佐斯
 - `HandyNotes_LunarFestival`: 春节长者
 - `HandyNotes_SummerFestival`: 火焰节火堆
@@ -26,8 +24,10 @@
 - `Leatrix Maps`: 地图增强
 - `Leatrix Plus`: 界面增强
 - `LittleWigs`: 地下城助手
+- `Masque: Serenity`: 动作条按钮皮肤美化
+- `Masque: Shadow`: 动作条按钮皮肤美化
 - `Masque`: 动作条按钮皮肤美化
-- `MeetingStone`: [集合石](https://bbs.nga.cn/read.php?tid=16152784)
+- `MeetingStone`: 集合石
 - `Molinari`: 快速分解
 - `Mythic Dungeon Tools`: 大米路线
 - `NeatPlates`: 姓名面板
@@ -43,7 +43,7 @@
 - `TinyInspect`: 装备观察
 - `TinyTooltip`: 鼠标提示
 - `Titan Panel`: 信息增强
-- `TomTom`: 导航增强
+- `TomTom`: 目标导航插件
 - `WeakAuras 2`: 技能监控
 - `World Quest Tab`: 查看世界
 - `idTip`: 物品ID
