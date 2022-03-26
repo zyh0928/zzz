@@ -12,7 +12,7 @@
 
   ```fundamental
   #showtooltips 技能名「不监控技能 CD 可不填」
-  /cast [@mouseover,help,exists]友方技能;[@mouseover,harm,exists][harm]敌方技能;友方技能
+  /use [@mouseover,help,exists]友方技能;[@mouseover,harm,exists][harm]敌方技能;友方技能
   ```
 
 ## State
