@@ -1,87 +1,101 @@
-## 九阳神功
+## 中文
 
-### [Python](https://www.python.org/)
+### 空格
 
-- [**pip**](https://pip.pypa.io/)
-- [**Anaconda**](https://www.anaconda.com/)
-- [**Pillow**](https://python-pillow.org/)
-- [yapf](https://github.com/google/yapf)
+「有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情之路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。」——[**为什么你们就是不能加个空格呢？**](https://github.com/vinta/pangu.js)
 
-  **Web**
-- [**Flask**](https://www.palletsprojects.com/p/flask)
+- **中英文之间需要增加空格**
+  > 正确：在 LeanCloud 上，数据存储是围绕 `AVObject` 进行的。
+  >
+  > 错误：在 LeanCloud 上，数据存储是围绕`AVObject` 进行的。
+  >
+  > 例外：「豆瓣 FM」等产品名词，按照官方所定义的格式书写。
+- **中文与数字之间需要增加增加空格**
+  > 正确：今天出去买菜花了 5000 元。
+  >
+  > 错误：今天出去买菜花了 5000 元。
+- **数字与单位之间需要增加空格**
+  > 正确：我的电脑 SSD 容量有 128 GB，HHD 有 1 TB。
+  >
+  > 错误：我的电脑 SSD 容量有 128GB，HHD 有 1TB。
+  >
+  > 例外：度「°」、百分比「%」与数字之间不需要增加空格。
+- **全形标点与其他字符之间不加空格**
+  > 正确：刚刚买了一部 Sony，好开心！
+  >
+  > 错误：刚刚买了一部 Sony ，好开心！
 
-### [Node.js](https://nodejs.org/)
+### 标点符号
 
-- [**Yarn**](https://yarnpkg.com/)
-- [**npm**](https://www.npmjs.com/)
+- **不重复使用标点符号**
+  > 正确：她竟然对你说「喵」？！
+  >
+  > 错误：她竟然对你说「喵」？！？！？？！！
 
-  **Web**
-- [**axios**](https://github.com/axios/axios)
-  > Promise based HTTP client for the browser and node.js
-- [**Sequelize**](http://docs.sequelizejs.com/)
-- [**Koa**](https://koajs.com/)
-- [**koa-bodyparser**](https://github.com/koajs/bodyparser)
-- [**koa-router**](https://github.com/alexmingoia/koa-router)
+### 全形和半形
 
-### [PHP](http://www.php.net/)
+- **使用全形中文标点**
+  > 正确：嗨！你知道吗？今天前台小妹跟我说「喵」了哎！
+  >
+  > 错误：嗨!你知道吗?今天前台小妹跟我说"喵"了哎!
+- **数字使用半形字符**
+  > 正确：这个蛋糕只卖 1000 元。
+  >
+  > 错误：这个蛋糕只卖 １０００ 元。
+- **遇到完整的英文整句、特殊名词，其内容使用半形标点**
+  > 正确：推荐你阅读《Hackers & Painters: Big Ideas from the Computer Age》，非常的有趣。
+  >
+  > 错误：推荐你阅读《Hackers＆Painters：Big Ideas from the Computer Age》，非常的有趣。
 
-- [**Composer**](https://getcomposer.org/)
+### 名词
 
-  **Web**
-- [**Guzzle**](http://guzzlephp.org/)
-- [**Lumen**](https://lumen.laravel.com/)
+- **专有名词使用正确的大小写**
+  > 正确：我们的客户有 GitHub、Foursquare、Microsoft Corporation、Google、Facebook, Inc.。
+  >
+  > 错误：我们的客户有 g ｲん ĤЦ8、ｷ ouЯƧqu ﾑ гє、๓เςг๏ร๏Ŧt ς๏гק๏гคtเ๏ภn、900913、ƒ4ᄃëв๏๏к, IПᄃ.。
+- **不要使用不地道的缩写**
+  > 正确：我们需要一位熟悉 JavaScript、HTML5，至少理解一种框架（如 Backbone.js、AngularJS、React 等）的前端开发者。
+  >
+  > 错误：我们需要一位熟悉 js、h5，至少理解一种框架（如 backbone、angular、RJS 等）的 FED。
 
-## 独孤九剑
+### 其他
 
-### [React](https://reactjs.org/)
+- **链接之间增加空格**
+  > 用法：访问我们网站的最新动态，请 [点击这里](https://example.com/) 进行订阅。
+  >
+  > 对比：访问我们网站的最新动态，请[点击这里](https://example.com/)进行订阅。
+- **简体中文使用直角引号**
+  > 用法：「老师，『有条不紊』的『紊』是什么意思？」
+  >
+  > 对比：“老师，‘有条不紊’的‘紊’是什么意思？”
 
-- [**React Router**](https://reacttraining.com/react-router)
+## English
 
-  UI
-- [**Material-UI**](https://material-ui.com/)
+### Space
 
-### [Vue.js](https://vuejs.org/)
+- **点号后加一个空格（如逗号、句号等）**
+  > 用法：Hello, World!
+  >
+  > 对比：Hello,World!
+- **符号前不加空格：度、百分比**
+  > 用法：9°, 100%
+- **符号后不加空格：货币标志、正负号**
+  > 用法：\$9, -233
+- **符号后加空格：「at」标志、版权标识、项目符号**
+  > 用法：@ Zeez, &copy; Zeez
+  >
+  > 例外：电子邮箱地址（tutwon@gmail.com）
+- **括号、引号前后加空格，中间内容不加空格**
+  > 用法：5.04 ounces (143 grams)
+  >
+  > 用法：Did you say "I love that" ?
 
-- [vue-class-component](https://github.com/vuejs/vue-class-component)
-- [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
-- [**Vuex**](https://vuex.vuejs.org/) - [vuex-class](https://github.com/ktsn/vuex-class)
-- [**Vue Router**](http://router.vuejs.org/)
-- [**Vue CLI 3**](https://cli.vuejs.org/)
-- [Nuxt.js](https://nuxtjs.org/)
-- [Vue I18n](https://kazupon.github.io/vue-i18n)
-- [VeeValidate](https://baianat.github.io/vee-validate)
-- [Vue.Draggable](https://github.com/SortableJS/Vue.Draggable)
+### Italic
 
-  UI
-- [**Vuetify**](https://vuetifyjs.com/)
-- [Element](https://element.eleme.io/)
+- 强调文中某个词或某句话
+- 标记外来语以及读者不习惯的单词
+- 文中出现的书名、剧名、艺术作品的题目等
 
-### [jQuery](https://jquery.com/)
+## References
 
-### [Lodash](https://lodash.com/)
-
-### [anime.js](http://animejs.com/)
-
-### [Animate.css](https://daneden.github.io/animate.css)
-
-### [Babel](https://babeljs.io/)
-
-### [Plupload](https://www.plupload.com/)
-
-### [ESLint](https://eslint.org/)
-
-## 玄铁重剑
-
-### [NIPPON COLORS](http://nipponcolors.com/)
-
-### [loading.io](https://loading.io/)
-
-### [汉仪字库](http://www.hanyi.com.cn/index.php)
-
-### [Google Fonts](https://fonts.google.com/)
-
-## 绣花针
-
-### [httpbin](https://httpbin.org/)
-
-### [Example Domain](https://example.com/)
+- [**中文文案排版指北**](https://github.com/sparanoid/chinese-copywriting-guidelines)

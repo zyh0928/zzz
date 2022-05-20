@@ -2,7 +2,7 @@
 
 - **comment row** _367_
 - **row 383**: `btnfont1:SetText(_G["SPELL_STAT"..primaryStat.."_NAME"]) -- Primary Stat`
-- **row 383**: `btnfont1:SetText(ITEM_MOD_VERSATILITY) -- Versatility`
+- **row 542**: `btnfont1:SetText(ITEM_MOD_VERSATILITY) -- Versatility`
 
 ## Default Soulbind Pack
 
