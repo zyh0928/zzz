@@ -1,28 +1,3 @@
-## Installation
-
-### Vue CLI
-
-- vue-cli 全局安装
-
-  ```sh
-  yarn global add @vue/cli
-  ```
-
-- Create project
-
-  ```sh
-  # linux path: /home/<user>/.yarn/bin/vue
-  vue create <name>
-  ```
-
-- Add `vue.config.js` on root
-
-  ```js
-  module.exports = {
-    // options...
-  };
-  ```
-
 ## Vue Router
 
 ### HTML5 History Mode
@@ -53,7 +28,7 @@ routes: [
   {
     path: "*",
     name: "NotFound",
-    component: () => import("path/to/NotFound")
-  }
+    component: () => import("path/to/NotFound"),
+  },
 ];
 ```
