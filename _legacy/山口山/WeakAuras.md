@@ -2,16 +2,11 @@
 
 ### Character Stats Panel
 
-- **comment row** _358_
-- **row 374**: `btnfont1:SetText(_G["SPELL_STAT"..primaryStat.."_NAME"]) -- Primary Stat`
-- **row 533**: `btnfont1:SetText(ITEM_MOD_VERSATILITY) -- Versatility`
+- **comment row** _374_
+- **row 390**: `btnfont1:SetText(_G["SPELL_STAT"..primaryStat.."_NAME"])`
+- **row 550**: `btnfont1:SetText(ITEM_MOD_VERSATILITY) -- Versatility`
 
-## Default Soulbind Pack
-
-- **row 66**: `if frame and frame:IsShown() and frame.text:GetText():find("盟约") then`
-- **row 73**: `if(msg:find("深厚联结")) then`
-
-## Efficient Stats - Shadowlands
+## Efficient Stats
 
 ### Action
 

@@ -8,15 +8,19 @@
 
 ## Install Arch
 
-- 转发端口
-- Erase SSD
-- 创建分区表和分区
-- 格式化并挂载根分区
-- 安装 `filesystem`
-- 格式化并挂载/boot
-- 安装 `linux`
-- 格式化并挂载 efi 分区
-- 安装 `linux`
+### [Download](https://archlinux.org/download/)
+
+### [Installation](https://wiki.archlinux.org/title/Installation_guide)
+
+- 选择 _Arch Linux install medium_ 进入安装环境
+
+  - 进入后可以 `passwd` 设置密码后用局域网 SSH 连接 `ssh root@ip.address`
+
+- 创建分区表和分区: `fdisk /dev/sda`
+
+  - `n`: Partition number: default, First sector: default, Last sector: +1G
+  - `n`: All: default
+  - `w`
 
 ## Install Ubuntu
 
