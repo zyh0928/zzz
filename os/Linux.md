@@ -6,27 +6,31 @@
   ssh -R 12345:localhost:22 root@192.168.X.X
   ```
 
-## Install Arch
+- 电脑固件更新管理
 
-### [Download](https://archlinux.org/download/)
-
-### [Installation](https://wiki.archlinux.org/title/Installation_guide)
-
-- 选择 _Arch Linux install medium_ 进入安装环境
-
-  - 进入后可以 `passwd` 设置密码后用局域网 SSH 连接 `ssh root@ip.address`
-
-- 创建分区表和分区: `fdisk /dev/sda`
-
-  - `n`: Partition number: default, First sector: default, Last sector: +1G
-  - `n`: All: default
-  - `w`
-
-## Install Ubuntu
+  ```sh
+  # 安装固件管理软件包
+  pacman -S fwupd
+  # 查看电脑相关硬件设备
+  fwupdmgr get-devices
+  # 刷新设备版本状态
+  fwupdmgr refresh --force
+  # 获取更新
+  fwupdmgr get-updates
+  # 安装更新
+  fwupdmgr update
+  ```
 
 ## Command
 
-```sh
-# Remove the user
-userdel -fr <username>
-```
+### User
+
+- 创建用户:
+
+  - `useradd -m <user_name> -G wheel`
+  - `passwd <user_name>`
+  - `visudo` _取消注释 %wheel ALL=(ALL) NOPASSWD: ALL_
+
+- 用户改名:
+
+- 删除用户: `userdel -fr <user_name>`
