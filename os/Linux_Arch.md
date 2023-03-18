@@ -53,7 +53,7 @@
 - `pacstrap /mnt base base-devel linux linux-firmware linux-headers sof-firmware`
 
 - ```sh
-  pacman -S vim reflector
+  pacman -S vim nano reflector
 
   ## 获取pacman镜像源
   reflector -c China -a 10 --sort rate --save /etc/pacman.d/mirrorlist
@@ -61,7 +61,7 @@
   cat /etc/pacman.d/mirrorlist
   ```
 
-- pacman 配置: `vim /etc/pacman.conf` _# 取消 Color 和 ParallelDownloads = 5 的注释_
+- pacman 配置: `vim /etc/pacman.conf` _# uncomment Color and ParallelDownloads = 5_
 - 语言:
 
   ```sh
@@ -72,18 +72,6 @@
   locale-gen
   echo 'LANG=en_US.UTF-8' > /etc/locale.conf
   ```
-
-- Gnome: `pacman -S gnome gnome-tweaks gnome-tweak-tool`
-  - `systemctl enable gdm.service`
-- 常用软件包
-
-  - dhcpcd: 分配 ip 地址
-  - openssh: ssh 服务
-  - man-db man-pages: 软件包文档
-
-    ```txt
-    chromium dhcpcd gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-libev tilix ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family ttf-sarasa-gothic ttf-fira-code zip
-    ```
 
 - open in tilix
 
@@ -112,23 +100,26 @@
 
   ```
 
-- yay (Not recommended) :
+## Get Started
 
-  ```sh
-  # /etc/pacman.conf  end
+```sh
+# install yay
+# /etc/pacman.conf  end
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
-  [archlinuxcn]
-  Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+sudo pacman -Syu
+sudo pacman -S archlinuxcn-keyring
 
-  sudo pacman -Syu
-  sudo pacman -S archlinuxcn-keyring
+sudo pacman -S yay
 
-  sudo pacman -S yay
+sudo pacman -Rs archlinuxcn-keyring
+# remove pacman.conf end
+```
 
-  sudo pacman -Rs archlinuxcn-keyring
-  ```
+### 常用软件包
 
-- Chromium Sign in
+- chromium
 
   ```sh
   # ~/.xprofile
@@ -138,20 +129,8 @@
   export GOOGLE_DEFAULT_CLIENT_SECRET=客户端密钥
   ```
 
-- gnome extensions
-  - Arch Linux Updates Indicator - `pacman-contrib`
-  - Blur my Shell
-  - Caffeine
-  - Clipboard Indicator
-  - Dash to Dock
-  - Launch new instance
-  - Places Status Indicator
-  - Screenshot Tool
-  - Top Bar Organizer
-  - Unite
-  - User Themes
-  - Workspace Indicator
-- fcitx5: `pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-rime`
+- dhcpcd: 分配 ip 地址
+- [fcitx5](https://wiki.archlinux.org/title/Fcitx5)
 
   ```sh
   # /etc/environment
@@ -164,40 +143,44 @@
   GLFW_IM_MODULE=ibus
   ```
 
-- theme: `sudo yay -S numix-circle-icon-theme-git numix-gtk-theme bibata-cursor-theme`
+- man-db man-pages: 软件包文档
+- [nano](https://wiki.archlinux.org/title/nano)
+- [shadowsocks-libev](https://wiki.archlinux.org/title/Shadowsocks)
 
-## [Fingerprint](https://wiki.archlinux.org/title/Fprint)
-
-## Command
-
-```sh
-# Installing specific packages
-pacman -S <package_name>[{[name1][,name2..]}]
-
-# To see what packages belong to the package_name group
-pacman -Sg <package_name>
-
-# Update all packages on the system
-pacman -Syu
-
-# Remove old packages from cache directory (-cc for all)
-pacman -Scc
-
-# To display extensive information about a given package
-pacman -Si [package_name]
-
-# Remove unneeded packages
-pacman -Rs <package_name>
-
-# Remove configuration files
-pacman -Rn <package_name>
-
-# Remove system unneeded packages
-pacman -R $(pacman -Qtdq)
-
-# For locally installed packages
-pacman -Q[i] [package_name]
-
-# To list all packages no longer required as dependencies (orphans):
-pacman -Qdt
+```txt
+chromium dhcpcd gedit git fcitx5-im fcitx5-chinese-addons fcitx5-rime man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-libev tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
 ```
+
+### Gnome
+
+- bae:
+
+  - `yay -S gnome gnome-tweaks gnome-tweak-tool`
+  - `systemctl enable gdm.service`
+
+- extensions
+
+  - Arch Linux Updates Indicator - `pacman-contrib`
+  - Blur my Shell
+  - Caffeine
+  - Clipboard Indicator
+  - Dash to Dock
+  - Launch new instance
+  - Places Status Indicator
+  - Screenshot Tool
+  - Top Bar Organizer
+  - Unite
+  - User Themes
+  - Workspace Indicator`
+
+### Theme
+
+- icon: `numix-circle-icon-theme-git`
+- cursor: `bibata-cursor-theme`
+- gtk: `numix-gtk-theme`
+
+## [PAM](https://wiki.archlinux.org/title/PAM)
+
+### [Fingerprint](https://wiki.archlinux.org/title/Fprint)
+
+### [Howdy](https://wiki.archlinux.org/title/Howdy)

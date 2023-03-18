@@ -27,10 +27,25 @@
 
 - 创建用户:
 
-  - `useradd -m <user_name> -G wheel`
-  - `passwd <user_name>`
-  - `visudo` _取消注释 %wheel ALL=(ALL) NOPASSWD: ALL_
+  ```sh
+  # add user
+  useradd -m <user_name> -G wheel
+  # set password
+  passwd <user_name>
+  # uncomment %wheel ALL=(ALL) NOPASSWD: ALL
+  visudo
+  ```
 
 - 用户改名:
+
+  ```sh
+  pkill -u <old_name>
+
+  pkill -9 -u <old_name>
+
+  usermod -l <new_name> -d /home/<new_name> [-u <new_uid_9999>] -m <old_name>
+
+  groupmod -n <new_name> [-g <new_gid_9999>] <old_name>
+  ```
 
 - 删除用户: `userdel -fr <user_name>`

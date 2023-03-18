@@ -33,7 +33,7 @@
 
 ### Modify php.ini
 
-> 注意去除注释「;」
+> uncomment ;
 
 - extension_dir = "./ext"
 - date.timezone = Asia/Shanghai
