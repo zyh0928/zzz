@@ -122,11 +122,11 @@ sudo pacman -Rs archlinuxcn-keyring
 - chromium
 
   ```sh
-  # ~/.xprofile
+  # /etc/environment
 
-  export GOOGLE_API_KEY=API 密钥的「键」
-  export GOOGLE_DEFAULT_CLIENT_ID=客户端 ID
-  export GOOGLE_DEFAULT_CLIENT_SECRET=客户端密钥
+  GOOGLE_API_KEY=API 密钥的「键」
+  GOOGLE_DEFAULT_CLIENT_ID=客户端 ID
+  GOOGLE_DEFAULT_CLIENT_SECRET=客户端密钥
   ```
 
 - dhcpcd: 分配 ip 地址
@@ -155,7 +155,7 @@ chromium dhcpcd gedit git fcitx5-im fcitx5-chinese-addons fcitx5-rime man-db man
 
 - bae:
 
-  - `yay -S gnome gnome-tweaks gnome-tweak-tool`
+  - `gnome gnome-tweaks gnome-tweak-tool`
   - `systemctl enable gdm.service`
 
 - extensions
@@ -178,9 +178,17 @@ chromium dhcpcd gedit git fcitx5-im fcitx5-chinese-addons fcitx5-rime man-db man
 - icon: `numix-circle-icon-theme-git`
 - cursor: `bibata-cursor-theme`
 - gtk: `numix-gtk-theme`
-
+  
 ## [PAM](https://wiki.archlinux.org/title/PAM)
 
 ### [Fingerprint](https://wiki.archlinux.org/title/Fprint)
+
+```sh
+# /etc/pam.d/system-local-login
+auth sufficient pam_fprintd.so
+
+# /etc/pam.d/gdm-*
+auth include system-local-login
+```
 
 ### [Howdy](https://wiki.archlinux.org/title/Howdy)

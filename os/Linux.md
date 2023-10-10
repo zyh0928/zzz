@@ -32,7 +32,7 @@
   useradd -m <user_name> -G wheel
   # set password
   passwd <user_name>
-  # uncomment %wheel ALL=(ALL) NOPASSWD: ALL
+  # uncomment %wheel ALL=(ALL) ALL
   visudo
   ```
 
