@@ -19,6 +19,11 @@
 - `win + dot`: Emoji 表情
 - `win + d`: 回到桌面
 
+## PowerShell
+
+- `Remove-Item (Get-PSReadlineOption).HistorySavePath`: PowerShell 清除历史记录
+- `Get-NetConnectionProfile`: 查看网络连接信息
+
 ## Tips
 
 ### Pin a batch file to Start
