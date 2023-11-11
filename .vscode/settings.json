@@ -1,0 +1,10 @@
+{
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "markdownlint.config": {
+    "MD002": {
+      "level": 2
+    },
+    "MD013": false,
+    "MD041": false
+  }
+}
