@@ -154,7 +154,7 @@ exit
 
 - 配置环境变量：MYSQL_HOME/bin
 - 管理员模式打开命令行，进入 MySQL 根目录下的 bin 文件夹
-- 初始化数据库：`‪mysqld --initialize`
+- 初始化数据库：`mysqld --initialize`
 
   > 带随机密码
 

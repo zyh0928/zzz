@@ -1,18 +1,18 @@
 ## Command
 
 ```sh
-# create user, use the '%' wildcard as a host part can connect from any host
-CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+# create user, host use % to create a user connected from any computer
+CREATE USER username@host IDENTIFIED BY password;
 
 # update user password
-ALTER USER 'username'@'host' IDENTIFIED BY 'password';
+ALTER USER username@host IDENTIFIED BY password;
 
-# privileges assigned through GRANT option do not need FLUSH PRIVILEGES to take effect
+# refresh the MySQL system permission table
 FLUSH PRIVILEGES;
 
-# grant privileges to a mysql user account
-GRANT ALL PRIVILEGES ON *.* TO 'username'@'host';
-GRANT permission1, permission2 ON database_name.table_name TO 'username'@'host';
+# grant permissions to the MySQL user account
+GRANT ALL PRIVILEGES ON database.* TO username@host;
+GRANT permission1, permission2 ON database_name.table_name TO username@host;
 ```
 
 ## Install on Ubuntu

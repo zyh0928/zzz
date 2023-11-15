@@ -1,8 +1,9 @@
 ## Tip
 
-- Port forwarding: `ssh -R [listening_host:]listening_port:host:hostport user@host`
+- Remote Port Forwarding:
 
   ```sh
+  # ssh -R remote_port:localhost:local_port ssh_server_hostname
   ssh -R 12345:localhost:22 root@192.168.X.X
   ```
 
@@ -40,12 +41,9 @@
 
   ```sh
   pkill -u <old_name>
-
   pkill -9 -u <old_name>
-
-  usermod -l <new_name> -d /home/<new_name> [-u <new_uid_9999>] -m <old_name>
-
-  groupmod -n <new_name> [-g <new_gid_9999>] <old_name>
+  usermod -l <new_name> -d /home/<new_name> [-u <new_uid>] -m <old_name>
+  groupmod -n <new_name> [-g <new_gid>] <old_name>
   ```
 
 - 删除用户: `userdel -fr <user_name>`

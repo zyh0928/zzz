@@ -1,12 +1,12 @@
 ## Installation
 
-### [Download](https://archlinux.org/download/)
+### [Download](https://archlinux.org/download)
 
-- [USB Tool](https://rufus.akeo.ie/)
+- [USB Tool](https://rufus.akeo.ie)
 
 ### [Installation](https://wiki.archlinux.org/title/Installation_guide)
 
-- [完整流程](https://zhuanlan.zhihu.com/p/596227524) _#引导加载程序 GRUB_
+- [完整流程](https://zhuanlan.zhihu.com/p/596227524) _# 引导加载程序 GRUB_
 
 - 选择 _Arch Linux install medium_ 进入安装环境
 
@@ -24,7 +24,6 @@
     # station wlan0 scan
     # station wlan0 get-networks
     station wlan0 connect <network name>
-    exit
     ```
 
 - btrfs
@@ -40,21 +39,21 @@
     btrfs subvolume create /mnt/@pkgs &&
     umount /mnt
 
-    ROOT_PART=p2 &&
-    mount -o compress=zstd:3,subvol=@ /dev/$ROOT_PART /mnt &&
+    ROOT=p2 &&
+    mount -o compress=zstd:3,subvol=@ /dev/$ROOT /mnt &&
     mkdir -p /mnt/{boot,home,var/log,var/cache/pacman/pkg}  &&
-    mount -o compress=zstd:3,subvol=@home /dev/$ROOT_PART /mnt/home &&
-    mount -o compress=zstd:3,subvol=@logs /dev/$ROOT_PART /mnt/var/log &&
-    mount -o compress=zstd:3,subvol=@pkgs /dev/$ROOT_PART /mnt/var/cache/pacman/pkg
+    mount -o compress=zstd:3,subvol=@home /dev/$ROOT /mnt/home &&
+    mount -o compress=zstd:3,subvol=@logs /dev/$ROOT /mnt/var/log &&
+    mount -o compress=zstd:3,subvol=@pkgs /dev/$ROOT /mnt/var/cache/pacman/pkg
 
     mount /dev/p1 /mnt/boot
+
     ```
 
 - `pacstrap /mnt base base-devel linux linux-firmware linux-headers sof-firmware`
 
 - ```sh
   pacman -S vim nano reflector
-
   ## 获取pacman镜像源
   reflector -c China -a 10 --sort rate --save /etc/pacman.d/mirrorlist
   ## 查看是否有edu.cn的链接信息
@@ -79,7 +78,6 @@
   pacman -S python-nautilus
 
   # ~/.local/share/applications/open-pantheon-terminal-here.desktop
-
   [Desktop Entry]
   Name=Terminal
   TryExec=tilix
@@ -97,14 +95,12 @@
   Terminal=false
   X-GNOME-UsesNotifications=false
   Categories=Other;
-
   ```
 
 ## Get Started
 
 ```sh
-# install yay
-# /etc/pacman.conf  end
+# install yay, /etc/pacman.conf >>> end
 [archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
@@ -112,7 +108,6 @@ sudo pacman -Syu
 sudo pacman -S archlinuxcn-keyring
 
 sudo pacman -S yay
-
 sudo pacman -Rs archlinuxcn-keyring
 # remove pacman.conf end
 ```
@@ -123,7 +118,6 @@ sudo pacman -Rs archlinuxcn-keyring
 
   ```sh
   # /etc/environment
-
   GOOGLE_API_KEY=API 密钥的「键」
   GOOGLE_DEFAULT_CLIENT_ID=客户端 ID
   GOOGLE_DEFAULT_CLIENT_SECRET=客户端密钥
@@ -134,7 +128,6 @@ sudo pacman -Rs archlinuxcn-keyring
 
   ```sh
   # /etc/environment
-
   GTK_IM_MODULE=fcitx
   QT_IM_MODULE=fcitx
   XMODIFIERS=@im=fcitx
@@ -148,7 +141,7 @@ sudo pacman -Rs archlinuxcn-keyring
 - [shadowsocks-libev](https://wiki.archlinux.org/title/Shadowsocks)
 
 ```txt
-chromium dhcpcd gedit git fcitx5-im fcitx5-chinese-addons fcitx5-rime man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-libev tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
+chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-libev tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
 ```
 
 ### Gnome
@@ -178,7 +171,7 @@ chromium dhcpcd gedit git fcitx5-im fcitx5-chinese-addons fcitx5-rime man-db man
 - icon: `numix-circle-icon-theme-git`
 - cursor: `bibata-cursor-theme`
 - gtk: `numix-gtk-theme`
-  
+
 ## [PAM](https://wiki.archlinux.org/title/PAM)
 
 ### [Fingerprint](https://wiki.archlinux.org/title/Fprint)

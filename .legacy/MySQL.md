@@ -4,7 +4,7 @@
 
 - 配置环境变量：MYSQL_HOME/bin
 - 管理员模式打开命令行，进入 MySQL 根目录下的 bin 文件夹
-- 初始化数据库：`‪mysqld --initialize`
+- 初始化数据库：`mysqld --initialize`
 
   > 带随机密码
 
@@ -29,18 +29,18 @@
 
 ```sh
 mysql> show variables like '%char%';
-+--------------------------+-----------------------------------+
-| Variable_name            | Value                             |
-+--------------------------+-----------------------------------+
-| character_set_client     | utf8mb4                           |
-| character_set_connection | utf8mb4                           |
-| character_set_database   | utf8mb4                           |
-| character_set_filesystem | binary                            |
-| character_set_results    | utf8mb4                           |
-| character_set_server     | utf8mb4                           |
-| character_set_system     | utf8                              |
-| character_sets_dir       | user\local\mysql\share\charsets\  |
-+--------------------------+-----------------------------------+
++--------------------------+----------------------------------+
+| Variable_name            | Value                            |
++--------------------------+----------------------------------+
+| character_set_client     | utf8mb4                          |
+| character_set_connection | utf8mb4                          |
+| character_set_database   | utf8mb4                          |
+| character_set_filesystem | binary                           |
+| character_set_results    | utf8mb4                          |
+| character_set_server     | utf8mb4                          |
+| character_set_system     | utf8                             |
+| character_sets_dir       | user\local\mysql\share\charsets\ |
++--------------------------+----------------------------------+
 ```
 
 ## Link

@@ -16,6 +16,7 @@ git config --global user.email tutwon@gmail.com
 # local
 git config user.name Zeez
 git config user.email tutwon@gmail.com
+
 ```
 
 ### Rebase
@@ -29,6 +30,7 @@ git rebase -i HEAD~n
 # change author & email, pick -> edit or e
 git commit --amend --author="Zeez <tutwon@gmail.com>" --no-edit
 git rebase --continue
+
 ```
 
 ### Configure Proxy
@@ -36,6 +38,7 @@ git rebase --continue
 ```sh
 git config --global http.proxy socks5://127.0.0.1:9099
 git config --global https.proxy socks5://127.0.0.1:9099
+
 ```
 
 ## [Commitizen](https://github.com/commitizen/cz-cli)
