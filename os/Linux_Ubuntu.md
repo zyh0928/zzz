@@ -50,7 +50,6 @@ acme.sh --installcert -d wjbzg.com -d *.wjbzg.com \
 --key-file /www/picoll/ssl/wjbzg.com.key \
 --fullchain-file /www/picoll/ssl/fullchain.cer \
 --reloadcmd "nginx -s reload"
-
 ```
 
 ### Upgrade `acme.sh`
@@ -64,7 +63,6 @@ acme.sh --installcert -d wjbzg.com -d *.wjbzg.com \
 ```sh
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
 ```
 
 ## Shadowsocks
