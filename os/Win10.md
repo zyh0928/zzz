@@ -26,6 +26,13 @@
 - `Remove-Item (Get-PSReadlineOption).HistorySavePath`: PowerShell 清除历史记录
 - `Get-NetConnectionProfile`: 查看网络连接信息
 
+### Reset Notification Icons
+
+- win + r: `regedit`
+- `HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify`
+- DELETE `IconStreams` and `PastIconsStream`
+- Task Manager: Restart `Windows Explorer`
+
 ## Tips
 
 ### Pin a batch file to Start
