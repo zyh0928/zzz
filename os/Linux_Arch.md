@@ -14,55 +14,72 @@
 
   - 进入后可以 `passwd` 设置密码后用局域网 SSH 连接 `ssh root@ip.address`
 
-- 连接 WIFI
+- 连接 WIFI: `iwctl`
 
-  - 查看网络接口: `ip link`
-  - 进入交互式提示符，配置并连接到互联网: `iwctl`
-  - （可选）取消禁用 wifi 设备: `rfkill unblock wifi`
-  - （可选）开启设备: `ip link set <dev name>`
+  - `station wlan0 show`
+  - `station wlan0 connect SSID`
+
+- fdisk
+
+  - `fdisk -l`
+  - `fdisk /dev/<name>`
 
     ```sh
-    station wlan0 show
-    # station wlan0 scan
-    # station wlan0 get-networks
-    station wlan0 connect <network name>
+    p # 分区列表
+    d # 删除分区
+    n # 新建分区
+    w # 保存退出
     ```
+
+  _# 如果硬盘是 nvme0n1，name 就要写为 nvme0n1，清空分区后新建两个分区，后面的 p1 就要写成 nvme0n1p1_
 
 - btrfs
 
-  - p1: `mkfs.fat -F 32 /dev/p1` _# EFI System_
-  - p2: `mkfs.btrfs /dev/p2` _# Linux filesystem_
+  - p1: `mkfs.fat -F 32 /dev/nvme0n1p1` _# EFI System_
+  - p2: `mkfs.btrfs /dev/nvme0n1p2` _# Linux filesystem_
 
     ```sh
-    mount /dev/p2 /mnt &&
+    mount /dev/nvme0n1p2 /mnt &&
     btrfs subvolume create /mnt/@ &&
     btrfs subvolume create /mnt/@home &&
     btrfs subvolume create /mnt/@logs &&
     btrfs subvolume create /mnt/@pkgs &&
     umount /mnt
 
-    ROOT=p2 &&
+    ROOT=nvme0n1p2 &&
     mount -o compress=zstd:3,subvol=@ /dev/$ROOT /mnt &&
     mkdir -p /mnt/{boot,home,var/log,var/cache/pacman/pkg}  &&
     mount -o compress=zstd:3,subvol=@home /dev/$ROOT /mnt/home &&
     mount -o compress=zstd:3,subvol=@logs /dev/$ROOT /mnt/var/log &&
     mount -o compress=zstd:3,subvol=@pkgs /dev/$ROOT /mnt/var/cache/pacman/pkg
 
-    mount /dev/p1 /mnt/boot
-
+    mount /dev/nvme0n1p1 /mnt/boot
     ```
 
-- `pacstrap /mnt base base-devel linux linux-firmware linux-headers sof-firmware`
-
 - ```sh
-  pacman -S vim nano reflector
-  ## 获取pacman镜像源
-  reflector -c China -a 10 --sort rate --save /etc/pacman.d/mirrorlist
-  ## 查看是否有edu.cn的链接信息
+  # 获取pacman镜像源
+  reflector -p https -c China --delay 3 --completion-percent 95 --sort rate --save /etc/pacman.d/mirrorlist
+  # 查看是否有edu.cn的链接信息
   cat /etc/pacman.d/mirrorlist
   ```
 
+- `pacstrap -K /mnt base linux linux-firmware sof-firmware`
+
+- fstab: `genfstab -U /mnt >> /mnt/etc/fstab` _# cat /mnt/etc/fstab_
+
+- 切换到新系统: `arch-chroot /mnt`
+
+- 时区:
+
+  ```sh
+  # 输入 /usr/share/zoneinfo/ 之后按下Tab键查看可选的时区
+  ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  # 硬件时间
+  hwclock --systohc
+  ```
+
 - pacman 配置: `vim /etc/pacman.conf` _# uncomment Color and ParallelDownloads = 5_
+
 - 语言:
 
   ```sh
@@ -74,45 +91,7 @@
   echo 'LANG=en_US.UTF-8' > /etc/locale.conf
   ```
 
-- open in tilix
-
-  ```sh
-  pacman -S python-nautilus
-
-  # ~/.local/share/applications/open-pantheon-terminal-here.desktop
-  [Desktop Entry]
-  Name=Terminal
-  TryExec=tilix
-  Exec=tilix -w %u
-  Icon=utilities-terminal
-  Type=Application
-  StartupNotify=true
-  X-GNOME-Gettext-Domain=tilix
-  NoDisplay=true
-  MimeType=inode/directory;
-  Name[en_US]=Terminal
-  X-GNOME-FullName[en_US]=Terminal
-  Comment[en_US]=
-  Path=
-  Terminal=false
-  X-GNOME-UsesNotifications=false
-  Categories=Other;
-  ```
-
-## Get Started
-
-```sh
-# install yay, /etc/pacman.conf >>> end
-[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-
-sudo pacman -Syu
-sudo pacman -S archlinuxcn-keyring
-
-sudo pacman -S yay
-sudo pacman -Rs archlinuxcn-keyring
-# remove pacman.conf end
-```
+- **之后参考教程**
 
 ### 常用软件包
 
@@ -140,17 +119,42 @@ sudo pacman -Rs archlinuxcn-keyring
 
 - man-db man-pages: 软件包文档
 - [nano](https://wiki.archlinux.org/title/nano)
-- [shadowsocks-libev](https://wiki.archlinux.org/title/Shadowsocks)
+- [shadowsocks-rust](https://wiki.archlinux.org/title/Shadowsocks)
 
-```txt
-chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-libev tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
-```
+  ```txt
+  chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-rust tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
+  ```
+
+- open in tilix
+
+  ```sh
+  pacman -S python-nautilus
+
+  # ~/.local/share/applications/open-pantheon-terminal-here.desktop
+  [Desktop Entry]
+  Name=Terminal
+  TryExec=tilix
+  Exec=tilix -w %u
+  Icon=utilities-terminal
+  Type=Application
+  StartupNotify=true
+  X-GNOME-Gettext-Domain=tilix
+  NoDisplay=true
+  MimeType=inode/directory;
+  Name[en_US]=Terminal
+  X-GNOME-FullName[en_US]=Terminal
+  Comment[en_US]=
+  Path=
+  Terminal=false
+  X-GNOME-UsesNotifications=false
+  Categories=Other;
+  ```
 
 ### Gnome
 
 - bae:
 
-  - `gnome gnome-tweaks gnome-tweak-tool`
+  - `gnome gnome-extra`
   - `systemctl enable gdm.service`
 
 - extensions
@@ -166,7 +170,7 @@ chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man
   - Top Bar Organizer
   - Unite
   - User Themes
-  - Workspace Indicator`
+  - Workspace Indicator
 
 ### Theme
 
