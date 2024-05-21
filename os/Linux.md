@@ -32,11 +32,11 @@
 
   ```sh
   # add user
-  useradd -m <user_name> -G wheel
+  useradd -m -G wheel <user_name>
   # set password
   passwd <user_name>
   # uncomment %wheel ALL=(ALL) ALL
-  visudo
+  vim /etc/sudoers
   ```
 
 - 用户改名:
