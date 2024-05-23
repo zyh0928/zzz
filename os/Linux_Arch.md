@@ -59,7 +59,7 @@
 - chromium
 
   ```sh
-  # /etc/environment
+  # /etc/environment, or ~/.xprofile add export
   GOOGLE_API_KEY=API 密钥的「键」
   GOOGLE_DEFAULT_CLIENT_ID=客户端 ID
   GOOGLE_DEFAULT_CLIENT_SECRET=客户端密钥
@@ -69,7 +69,7 @@
 - [fcitx5](https://wiki.archlinux.org/title/Fcitx5) _# /etc/environment，配置快捷键时禁用 Settings > Keyboard > Typing_
 
   ```sh
-  # /etc/environment
+  # /etc/environment, or ~/.xprofile add export
   GTK_IM_MODULE=fcitx
   QT_IM_MODULE=fcitx
   XMODIFIERS=@im=fcitx
@@ -82,34 +82,33 @@
 - [nano](https://wiki.archlinux.org/title/nano)
 - [shadowsocks-rust](https://wiki.archlinux.org/title/Shadowsocks)
 
-  ```txt
-  pacman -S chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-rust tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
-  ```
+```sh
+pacman -S chromium dhcpcd fcitx5-chinese-addons fcitx5-im fcitx5-rime gedit git man-db man-pages nano noto-fonts noto-fonts-cjk noto-fonts-emoji openssh shadowsocks-rust tilix ttf-fira-code ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-ubuntu-font-family zip
+```
 
-- open in tilix
+```sh
+# open in tilix
 
-  ```sh
-  pacman -S python-nautilus
-
-  # ~/.local/share/applications/open-pantheon-terminal-here.desktop
-  [Desktop Entry]
-  Name=Terminal
-  TryExec=tilix
-  Exec=tilix -w %u
-  Icon=utilities-terminal
-  Type=Application
-  StartupNotify=true
-  X-GNOME-Gettext-Domain=tilix
-  NoDisplay=true
-  MimeType=inode/directory;
-  Name[en_US]=Terminal
-  X-GNOME-FullName[en_US]=Terminal
-  Comment[en_US]=
-  Path=
-  Terminal=false
-  X-GNOME-UsesNotifications=false
-  Categories=Other;
-  ```
+pacman -S python-nautilus
+# ~/.local/share/applications/open-pantheon-terminal-here.desktop
+[Desktop Entry]
+Name=Terminal
+TryExec=tilix
+Exec=tilix -w %u
+Icon=utilities-terminal
+Type=Application
+StartupNotify=true
+X-GNOME-Gettext-Domain=tilix
+NoDisplay=true
+MimeType=inode/directory;
+Name[en_US]=Terminal
+X-GNOME-FullName[en_US]=Terminal
+Comment[en_US]=
+Path=
+Terminal=false
+X-GNOME-UsesNotifications=false
+Categories=Other;
+```
 
 #### Gnome
 
@@ -124,20 +123,13 @@
   - Blur my Shell
   - Caffeine
   - Clipboard Indicator
-  - Dash to Dock
   - Launch new instance
   - Places Status Indicator
-  - Screenshot Tool
-  - Top Bar Organizer
-  - Unite
-  - User Themes
-  - Workspace Indicator
 
 #### Theme
 
 - icon: `numix-circle-icon-theme-git`
 - cursor: `bibata-cursor-theme`
-- gtk: `numix-gtk-theme`
 
 ## [PAM](https://wiki.archlinux.org/title/PAM)
 

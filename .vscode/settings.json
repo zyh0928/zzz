@@ -1,5 +1,4 @@
 {
   "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": true,
-  "markdownlint.ignore": [".legacy/**/*.md"]
+  "diffEditor.ignoreTrimWhitespace": true
 }
